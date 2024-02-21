@@ -1,1 +1,1 @@
-# Similar production project
+# Similar production project, currently under development
