@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import './styles/index.css';
 import { AppRouter } from './providers/router';
+import './styles/index.css';
 
 const App = () => {
 
