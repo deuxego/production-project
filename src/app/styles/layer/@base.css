@@ -1,0 +1,25 @@
+@layer base {
+  :root {
+    --bg-color: #e8e8ea;
+    --primary-color: #041c65;
+    --secondary-color: #0449e0;
+
+    --dark-bg-color: #0e0e75;
+    --dark-primary-color: #049604;
+    --dark-secondary-color: #04ff04;
+  }
+
+  .app {
+    @apply font-inconsolata;
+
+    @apply leading-6;
+    @apply text-base;
+
+    @apply bg-bg_primary;
+    @apply text-primary;
+    @apply dark:bg-bg_dark-primary;
+    @apply dark:text-dark-primary;
+
+    @apply min-h-screen;
+  }
+}
