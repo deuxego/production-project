@@ -1,16 +1,16 @@
 @layer base {
   :root {
     --bg-color: #e8e8ea;
-    --primary-color: #041c65;
+    --primary-color: black;
     --secondary-color: #0449e0;
 
-    --dark-bg-color: #0e0e75;
-    --dark-primary-color: #049604;
-    --dark-secondary-color: #04ff04;
+    --dark-bg-color: #374151;
+    --dark-primary-color: #fff;
+    --dark-secondary-color: gray;
   }
 
   .app {
-    @apply font-inconsolata;
+    @apply font-oxygen;
 
     @apply leading-6;
     @apply text-base;

@@ -1,4 +1,17 @@
 
 @layer components {
+  .nav-link{
+    @apply block py-2 px-3 text-black text-2xl rounded hover:bg-gray-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:hover:text-blue-400 dark:text-white md:p-0;
+  }
+  .nav-link-active{
+    @apply text-blue-700 dark:text-blue-400; 
+  }
   
+  .sidebar{
+    @apply flex flex-col gap-1 h-[calc(100vh-50px)] max-w-[180px] w-full pt-5 border-r-2 border-solid border-gray-300 dark:bg-gray-800 dark:border-gray-700;
+  }
+
+  .sidebar-item{
+    @apply flex items-center gap-1 font-semibold text-xl px-4 py-2 rounded-md cursor-pointer border-solid text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white;
+  }
 }
