@@ -37,7 +37,7 @@ const sidebarItems: SidebarItem[] = [
 const Sidebar: React.FC<SidebarProps> = ({ className }) => {
   return (
     <>
-      <div className={cn('sidebar', { [className]: toBoolean(className) })}>
+      <div className={cn('sidebar', { [className as string]: toBoolean(className) })}>
         {sidebarItems.map(({ icon, title, to }) => (
           <Link to={to}>
             <SidebarItem>
