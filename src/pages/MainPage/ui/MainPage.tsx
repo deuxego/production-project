@@ -1,7 +1,8 @@
+import { Counter } from "entities/Counter";
 
 const MainPage = () => {
   return (
-    <div>MainPage</div>
+    <div><Counter /></div>
   )
 }
 
