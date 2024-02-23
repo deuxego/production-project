@@ -39,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
     <>
       <div className={cn('sidebar', { [className as string]: toBoolean(className) })}>
         {sidebarItems.map(({ icon, title, to }) => (
-          <Link to={to}>
+          <Link to={to} key={title}>
             <SidebarItem>
               <span className="text-2xl">{icon}</span>
               {title}

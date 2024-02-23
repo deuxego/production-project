@@ -1,15 +1,16 @@
 import { Navbar } from 'widgets/Navbar';
 import { AppRouter } from './providers/router';
-import './styles/index.css';
 import { Sidebar } from 'widgets/Sidebar';
+import './styles/index.css';
 
 const App = () => {
   return (
     <div className="app">
       <Navbar className="bg-white" />
+
       <div className="flex">
         <Sidebar />
-        <div className='container'>
+        <div className="container">
           <AppRouter />
         </div>
       </div>
