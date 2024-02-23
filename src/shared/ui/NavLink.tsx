@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
-import cn from 'shared/lib/classNames';
 import { toBoolean } from 'shared/lib/toBoolean';
+import cn from 'shared/lib/classNames';
 
 interface NavLinkProps extends LinkProps {
   to: string;
@@ -10,15 +10,15 @@ interface NavLinkProps extends LinkProps {
   active?: boolean;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ to, children, active, className, ...otherProps }) => {
+const NavLink: React.FC<NavLinkProps> = ({ to, children, active, className, ...props }) => {
   return (
     <Link
       to={to}
-      className={cn('nav-link', {
+      className={cn('nav-link font-semibold	text-xl', {
         ['nav-link-active']: toBoolean(active),
         [className as string]: toBoolean(className)
       })}
-      {...otherProps}
+      {...props}
     >
       {children}
     </Link>

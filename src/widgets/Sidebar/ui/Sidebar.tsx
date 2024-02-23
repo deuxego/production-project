@@ -5,6 +5,7 @@ import { AiFillCheckSquare } from 'react-icons/ai';
 import cn from 'shared/lib/classNames';
 import { toBoolean } from 'shared/lib/toBoolean';
 import { Link } from 'react-router-dom';
+import ThemeSwitcher from 'shared/ui/ThemeSwitcher';
 
 interface SidebarProps {
   className?: string;
@@ -37,15 +38,20 @@ const sidebarItems: SidebarItem[] = [
 const Sidebar: React.FC<SidebarProps> = ({ className }) => {
   return (
     <>
-      <div className={cn('sidebar', { [className as string]: toBoolean(className) })}>
-        {sidebarItems.map(({ icon, title, to }) => (
-          <Link to={to}>
-            <SidebarItem>
-              <span className="text-2xl">{icon}</span>
-              {title}
-            </SidebarItem>
-          </Link>
-        ))}
+      <div
+        className={cn('sidebar justify-between', { [className as string]: toBoolean(className) })}
+      >
+        <div>
+          {sidebarItems.map(({ icon, title, to }) => (
+            <Link to={to} key={title}>
+              <SidebarItem>
+                <span className="text-2xl">{icon}</span>
+                {title}
+              </SidebarItem>
+            </Link>
+          ))}
+        </div>
+        <ThemeSwitcher className="pl-7 pb-3 w-24" />
       </div>
     </>
   );

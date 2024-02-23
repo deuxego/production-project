@@ -20,6 +20,7 @@
       "pages/*": ["pages/*"],
       "widgets/*": ["widgets/*"],
       "entities/*": ["entities/*"],
+      "features/*": ["features/*"],
       "shared/*": ["shared/*"],
     },
 
