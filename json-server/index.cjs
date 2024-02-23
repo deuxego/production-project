@@ -11,6 +11,13 @@ const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
 server.use(middlewares);
 server.use(jsonServer.bodyParser);
 
+// imitation request waiting
+server.use((req, res, next) => {
+  setTimeout(async () => {
+    next();
+  }, 500);
+});
+
 server.use((req, res, next) => {
   if (!req.headers.authorization) {
     return res.status(403).json({ message: 'AUTH ERROR' });
