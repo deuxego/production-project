@@ -7,7 +7,7 @@ interface ThemeSwitcherProps {
   className?: string;
 }
 
-const ThemeSwitcher: FC<ThemeSwitcherProps> = (className) => {
+const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
   const { toggleTheme } = useTheme();
   return (
     <button
@@ -16,7 +16,11 @@ const ThemeSwitcher: FC<ThemeSwitcherProps> = (className) => {
         [className as string]: toBoolean(className)
       })}
     >
-      <img src="./theme.svg" alt="theme" className="h-6" />
+      <img
+        src="./theme.svg"
+        alt="theme"
+        className={cn('w-5', { [className as string]: toBoolean(className) })}
+      />
     </button>
   );
 };

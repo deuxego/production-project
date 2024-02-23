@@ -14,7 +14,7 @@ const NavLink: React.FC<NavLinkProps> = ({ to, children, active, className, ...p
   return (
     <Link
       to={to}
-      className={cn('nav-link', {
+      className={cn('nav-link font-semibold	text-xl', {
         ['nav-link-active']: toBoolean(active),
         [className as string]: toBoolean(className)
       })}
