@@ -17,7 +17,8 @@ const Button: React.FC<ButtonProps> = ({ color, children, ...props }) => {
         ['primary-btn']: color === 'primary',
         ['success-btn']: color === 'success',
         ['error-btn']: color === 'error',
-        [props.className as string]: toBoolean(props.className)
+        [props.className as string]: toBoolean(props.className),
+        ['bg-gray-400']: toBoolean(props.disabled),
       })}
       
       {...excludeProps<'button'>(props, 'className')}

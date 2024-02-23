@@ -1,13 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { counterReducer } from 'entities/Counter/model/slice/counterSlice';
 import { userReducer } from 'entities/User';
+import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import type { TypedUseSelectorHook } from 'react-redux';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
-    user: userReducer
+    user: userReducer,
+    login: loginReducer
   }
 });
 
