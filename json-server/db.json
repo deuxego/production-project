@@ -8,6 +8,17 @@
     }
   ],
 
+  "profile": {
+    "firstname": "Igor",
+    "lastname": "Galushka",
+    "age": 22,
+    "currency": "USD",
+    "city": "Chicago",
+    "country": "USA",
+    "username": "igorGalushka",
+    "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Ficonduck.com%2Ficons%2F160691%2Favatar-default-symbolic&psig=AOvVaw3uhAHXgL65CHK31aVM8ZNa&ust=1708934285192000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCJCG_76CxoQDFQAAAAAdAAAAABAE"
+  },
+
   "posts": [
     {
       "id": 1,

@@ -22,17 +22,17 @@ export const loginSlice = createSlice({
   }, 
 
   extraReducers: (builder) => {
-    builder.addCase(loginByUsername.pending, (state, action) => {
+    builder.addCase(loginByUsername.pending, (state) => {
       state.error = undefined;
       state.isLoading = true;
     })
 
-    builder.addCase(loginByUsername.fulfilled, (state, action) => {
+    builder.addCase(loginByUsername.fulfilled, (state) => {
       state.error = undefined;
       state.isLoading = false;
     })
 
-    builder.addCase(loginByUsername.rejected, (state, action) => {
+    builder.addCase(loginByUsername.rejected, (state) => {
       state.error = 'Incorrectly entered data';
       state.isLoading = false;
     })

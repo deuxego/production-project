@@ -1,10 +1,10 @@
 import { Navbar } from 'widgets/Navbar';
 import { AppRouter } from './providers/router';
 import { Sidebar } from 'widgets/Sidebar';
-import './styles/index.css';
 import { useAppDispatch } from './providers/StoreProvider/config/store';
 import { useEffect } from 'react';
 import { userActions } from 'entities/User';
+import './styles/index.css'; 
 
 const App = () => {
   const dispatch = useAppDispatch();

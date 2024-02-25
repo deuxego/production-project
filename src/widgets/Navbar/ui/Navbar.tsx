@@ -1,12 +1,13 @@
-import { FC, useEffect, useState } from 'react';
-import { toBoolean } from 'shared/lib/toBoolean';
-import { LoginModal } from 'features/AuthByUsername';
-import { RxAvatar } from 'react-icons/rx';
 import { useAppDispatch, useAppSelector } from 'app/providers/StoreProvider/config/store';
+import { FC, memo, useEffect, useState } from 'react';
 import { userActions } from 'entities/User';
-import cn from 'shared/lib/classNames';
+import { LoginModal } from 'features/AuthByUsername';
+import { toBoolean } from 'shared/lib/toBoolean';
+import { RxAvatar } from 'react-icons/rx';
+import { Link } from 'react-router-dom';
 import NavLink from 'shared/ui/NavLink';
 import Button from 'shared/ui/Button';
+import cn from 'shared/lib/classNames';
 
 interface NavbarProps {
   className?: string;
@@ -15,7 +16,7 @@ interface NavbarProps {
 const baseStyles =
   'flex items-center w-full border-b-2 border-solid border-gray-300 dark:border-gray-800 dark:bg-gray-800 px-6 py-2';
 
-const Navbar: FC<NavbarProps> = (className) => {
+const Navbar: FC<NavbarProps> = memo((className) => {
   const { authData } = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
   const [isOpen, setIsOpen] = useState(false);
@@ -46,8 +47,10 @@ const Navbar: FC<NavbarProps> = (className) => {
 
         {authData ? (
           <div className="flex items-center gap-3">
-            <RxAvatar className="text-2xl" />
-            <Button onClick={onLogout} color="primary" className="py-1">
+            <Link to={'/profile'}>
+              <RxAvatar className="text-3xl" />
+            </Link>
+            <Button onClick={onLogout} color="primary" className="py-1 bg-sky-500">
               Logout
             </Button>
           </div>
@@ -61,6 +64,6 @@ const Navbar: FC<NavbarProps> = (className) => {
       </div>
     </div>
   );
-};
+});
 
 export default Navbar;

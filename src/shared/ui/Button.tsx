@@ -1,4 +1,4 @@
-import React, { ComponentProps, ReactNode } from 'react';
+import React, { ComponentProps, ReactNode, memo } from 'react';
 import cn from 'shared/lib/classNames';
 import { excludeProps } from 'shared/lib/excludeProps';
 import { toBoolean } from 'shared/lib/toBoolean';
@@ -10,7 +10,7 @@ interface ButtonProps extends ComponentProps<'button'> {
   children: ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = ({ color, children, ...props }) => {
+const Button: React.FC<ButtonProps> = memo(({ color, children, ...props }) => {
   return (
     <button
       className={cn({
@@ -26,6 +26,6 @@ const Button: React.FC<ButtonProps> = ({ color, children, ...props }) => {
       {children}
     </button>
   );
-};
+});
 
 export default Button;
