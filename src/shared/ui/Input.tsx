@@ -1,4 +1,4 @@
-import React, { ComponentProps } from 'react';
+import React, { ComponentProps, memo } from 'react';
 import { toBoolean } from 'shared/lib/toBoolean';
 import cn from 'shared/lib/classNames';
 
@@ -12,7 +12,7 @@ interface InputProps extends HTMLInputProps {
   onChange?: (value: string) => void;
 }
 
-const Input: React.FC<InputProps> = ({ value, onChange, title, className, type = 'text' }) => {
+const Input: React.FC<InputProps> = memo(({ value, onChange, title, className, type = 'text' }) => {
   return (
     <div className="flex flex-col gap-1">
       {title && <span>{title}</span>}
@@ -26,6 +26,6 @@ const Input: React.FC<InputProps> = ({ value, onChange, title, className, type =
       />
     </div>
   );
-};
+});
 
 export default Input;

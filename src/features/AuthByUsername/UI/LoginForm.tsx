@@ -14,7 +14,7 @@ interface LoginFormProps {
 }
 
 const LoginForm: React.FC<LoginFormProps> = memo(({ className }) => {
-  const { username, password, isLoading, error } = useAppSelector((state) => state.login);
+  const { username, password, isLoading, error } = useAppSelector((state) => state.loginForm);
 
   const dispatch = useAppDispatch();
 

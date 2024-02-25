@@ -1,5 +1,6 @@
+import { memo } from "react";
 
-const Loader = () => {
+const Loader = memo(() => {
   return (
     <div role="status" className="flex w-full justify-center">
       <svg
@@ -21,6 +22,6 @@ const Loader = () => {
       <span className="sr-only">Loading...</span>
     </div>
   );
-};
+});
 
 export default Loader;
