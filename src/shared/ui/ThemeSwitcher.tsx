@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { toBoolean } from 'shared/lib/toBoolean';
 import cn from 'shared/lib/classNames';
 import { useTheme } from 'shared/hooks/useTheme';
@@ -7,7 +7,7 @@ interface ThemeSwitcherProps {
   className?: string;
 }
 
-const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
+const ThemeSwitcher: FC<ThemeSwitcherProps> = memo(({ className }) => {
   const { toggleTheme } = useTheme();
   return (
     <button
@@ -23,6 +23,6 @@ const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
       />
     </button>
   );
-};
+});
 
 export default ThemeSwitcher;

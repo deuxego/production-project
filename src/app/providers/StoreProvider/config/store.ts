@@ -1,13 +1,15 @@
-import { configureStore } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/User';
-import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
+import { configureStore } from '@reduxjs/toolkit';
 import type { TypedUseSelectorHook } from 'react-redux';
+import { profileReducer } from 'entities/Profile';
 
 export const store = configureStore({
   reducer: {
     user: userReducer,
-    login: loginReducer
+    loginForm: loginReducer,
+    profile: profileReducer
   }
 });
 
